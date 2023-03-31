@@ -8,8 +8,11 @@ class SongsControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal Song.count, data.length
   end 
-  # test "show" do
-    # get "/song.json"
+  test "show" do
+    get "/song.json"
+    assert_response 200
 
-  # end
+    data = JSON.parse(response.body)
+    assert_equal Song.count, data.length
+  end
 end
