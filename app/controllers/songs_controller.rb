@@ -14,7 +14,7 @@ class SongsController < ApplicationController
       album: params[:album],
       year: params[:year]
       ) 
-    song.save
+    @song.save
     render :show
   end
 end
